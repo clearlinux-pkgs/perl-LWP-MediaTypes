@@ -4,7 +4,7 @@
 #
 Name     : perl-LWP-MediaTypes
 Version  : 6.02
-Release  : 14
+Release  : 15
 URL      : http://search.cpan.org/CPAN/authors/id/G/GA/GAAS/LWP-MediaTypes-6.02.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/G/GA/GAAS/LWP-MediaTypes-6.02.tar.gz
 Summary  : guess media type for a file or a URL
@@ -64,8 +64,8 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.0/LWP/MediaTypes.pm
-/usr/lib/perl5/site_perl/5.26.0/LWP/media.types
+/usr/lib/perl5/site_perl/5.26.1/LWP/MediaTypes.pm
+/usr/lib/perl5/site_perl/5.26.1/LWP/media.types
 
 %files doc
 %defattr(-,root,root,-)
