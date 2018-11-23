@@ -65,8 +65,8 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.26.1/LWP/MediaTypes.pm
-/usr/lib/perl5/vendor_perl/5.26.1/LWP/media.types
+/usr/lib/perl5/vendor_perl/5.28.0/LWP/MediaTypes.pm
+/usr/lib/perl5/vendor_perl/5.28.0/LWP/media.types
 
 %files dev
 %defattr(-,root,root,-)
