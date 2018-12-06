@@ -4,7 +4,7 @@
 #
 Name     : perl-LWP-MediaTypes
 Version  : 6.02
-Release  : 20
+Release  : 21
 URL      : http://search.cpan.org/CPAN/authors/id/G/GA/GAAS/LWP-MediaTypes-6.02.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/G/GA/GAAS/LWP-MediaTypes-6.02.tar.gz
 Summary  : guess media type for a file or a URL
