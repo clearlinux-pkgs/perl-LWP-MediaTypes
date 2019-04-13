@@ -1,5 +1,5 @@
 PKG_NAME := perl-LWP-MediaTypes
-URL = http://search.cpan.org/CPAN/authors/id/G/GA/GAAS/LWP-MediaTypes-6.02.tar.gz
+URL = https://cpan.metacpan.org/authors/id/O/OA/OALDERS/LWP-MediaTypes-6.04.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
