@@ -4,7 +4,7 @@
 #
 Name     : perl-LWP-MediaTypes
 Version  : 6.04
-Release  : 30
+Release  : 31
 URL      : https://cpan.metacpan.org/authors/id/O/OA/OALDERS/LWP-MediaTypes-6.04.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/O/OA/OALDERS/LWP-MediaTypes-6.04.tar.gz
 Summary  : Guess the media type of a file or a URL
