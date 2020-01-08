@@ -4,13 +4,14 @@
 #
 Name     : perl-LWP-MediaTypes
 Version  : 6.04
-Release  : 31
+Release  : 32
 URL      : https://cpan.metacpan.org/authors/id/O/OA/OALDERS/LWP-MediaTypes-6.04.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/O/OA/OALDERS/LWP-MediaTypes-6.04.tar.gz
-Summary  : Guess the media type of a file or a URL
+Summary  : 'guess media type for a file or a URL'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-LWP-MediaTypes-license = %{version}-%{release}
+Requires: perl-LWP-MediaTypes-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(Test::Fatal)
 BuildRequires : perl(Try::Tiny)
@@ -40,14 +41,24 @@ Group: Default
 license components for the perl-LWP-MediaTypes package.
 
 
+%package perl
+Summary: perl components for the perl-LWP-MediaTypes package.
+Group: Default
+Requires: perl-LWP-MediaTypes = %{version}-%{release}
+
+%description perl
+perl components for the perl-LWP-MediaTypes package.
+
+
 %prep
 %setup -q -n LWP-MediaTypes-6.04
+cd %{_builddir}/LWP-MediaTypes-6.04
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -57,7 +68,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -66,7 +77,7 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-LWP-MediaTypes
-cp LICENSE %{buildroot}/usr/share/package-licenses/perl-LWP-MediaTypes/LICENSE
+cp %{_builddir}/LWP-MediaTypes-6.04/LICENSE %{buildroot}/usr/share/package-licenses/perl-LWP-MediaTypes/e9330dd55cc5b12a4e89bca611863182e2acf7d1
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -79,8 +90,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/LWP/MediaTypes.pm
-/usr/lib/perl5/vendor_perl/5.28.2/LWP/media.types
 
 %files dev
 %defattr(-,root,root,-)
@@ -88,4 +97,9 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/perl-LWP-MediaTypes/LICENSE
+/usr/share/package-licenses/perl-LWP-MediaTypes/e9330dd55cc5b12a4e89bca611863182e2acf7d1
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/LWP/MediaTypes.pm
+/usr/lib/perl5/vendor_perl/5.30.1/LWP/media.types
